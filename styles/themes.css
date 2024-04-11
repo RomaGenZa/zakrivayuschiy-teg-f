@@ -4,3 +4,60 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root.theme-light {
+  --main-font: "Inter-Variable";
+  --accent-font: "Press Start 2P";
+  --font-weight-text: 400;
+  --font-weight-heading: 700;
+  --background: rgb(255, 255, 255);
+  --main-color-font: rgb(0, 0, 0);
+  --background-image: 
+  repeating-linear-gradient(to right, #d3d3d3 0 2px, rgba(211, 211, 211,0) 2px 4px),
+  repeating-linear-gradient(to bottom, #d3d3d3 0 2px, rgba(211, 211, 211,0) 2px 4px),
+  linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+  --disabled-color: rgba(0, 0, 0, 0.6);
+  --border: 2px solid var(--main-color-font);
+  --color-hover-button: #fff;
+  --sparks-color: #FF0000;
+}
+
+:root.theme-dark {
+  --main-font: "Inter-Variable";
+  --accent-font: "Press Start 2P";
+  --font-weight-text: 400;
+  --font-weight-heading: 800;
+  --background: rgba(0, 0, 0, 1);
+  --main-color-font: rgba(0, 204, 20, 1);
+  --background-image: 
+  repeating-linear-gradient(to right, #000 0 2px, rgba(0, 0, 0,0) 2px 4px),
+  repeating-linear-gradient(to bottom, #000 0 2px, rgba(0, 0, 0,0) 2px 4px),
+  linear-gradient(to bottom, #007f0c 0.01%, #004306 100%);
+  --disabled-color: rgba(0, 204, 20, 0.6);
+  --border: 2px solid var(--main-color-font);
+  --color-hover-button: rgba(0, 204, 20, 1);
+  --sparks-color: #FF0000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-font: "Inter-Variable";
+    --accent-font: "Press Start 2P";
+    --font-weight-text: 400;
+    --font-weight-heading: 800;
+    --background: rgba(0, 0, 0, 1);
+    --main-color-font: rgba(0, 204, 20, 1);
+    --background-image: 
+    repeating-linear-gradient(to right, #000 0 2px, rgba(0, 0, 0,0) 2px 4px),
+    repeating-linear-gradient(to bottom, #000 0 2px, rgba(0, 0, 0,0) 2px 4px),
+    linear-gradient(to bottom, #007f0c 0.01%, #004306 100%);
+    --disabled-color: rgba(0, 204, 20, 0.6);
+    --border: 2px solid var(--main-color-font);
+    --color-hover-button: rgba(0, 204, 20, 1);
+    --sparks-color: #FF0000;
+  }
+}
+
+
+
+
