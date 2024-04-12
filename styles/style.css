@@ -23,7 +23,7 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: var(--main-font, sans-serif, monospace);
+  font-family: var(--main-font, fantasy, monospace);
   color: var(--main-color-font);
   background-color: var(--background);
   margin: 0 auto;
@@ -33,7 +33,7 @@
   display: grid;
   grid-template-rows: clamp(10.4375rem, 9.7333rem + 3.0047vi, 12.4375rem) min-content min-content;
   gap: 23px;
-  font-family: var(--accent-font, sans-serif, monospace);
+  font-family: var(--accent-font, fantasy, monospace);
   font-size: 14px;
   text-transform: uppercase;
   justify-content: center;
@@ -50,12 +50,15 @@
 .text,
 .button__like,
 .decorative__element {
-  font-weight: var(--font-weight-text);
+  font-variation-settings: "wght" var(--font-weight-text);
 }
 
 .header__logo {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vi, 4.0625rem);
   line-height: clamp(3.0625rem, 2.7104rem + 1.5023vi, 4.0625rem);
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
 }
 
 .subtitle {
@@ -154,7 +157,7 @@
   padding: 4px 10px;
   justify-content: flex-start;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: var(--font-weight-heading);
   line-height: 22px;
   text-align: left;
 }
@@ -198,6 +201,7 @@
 .sepia {
   filter: sepia(80%);
 }
+
 .hue-rotate {
   filter: hue-rotate(300deg) saturate(100%) contrast(1.0);
 }
@@ -263,78 +267,6 @@
 .card__icon-button:focus-visible {
   transition: 0.3s ease;
   outline: var(--border);
-}
-
-.sparks {
-  opacity: 0;
-}
-
-.core {
-  transition: fill 0.3s linear 0.03s;
-}
-
-.like-icon:hover .core {
-  transition: fill 0.3s linear;
-  fill: var(--main-color-font);
-}
-
-.main-body {
-  transition: fill 0.3s linear;
-}
-
-.like-icon:hover .main-body {
-  transition: fill 0.3s linear 0.05s;
-  fill: var(--main-color-font);
-}
-
-.like-icon:active .core {
-  transition: fill 0.3s linear;
-  fill: var(--sparks-color);
-}
-
-.like-icon:active .main-body {
-  transition: fill 0.3s linear 0.05s;
-  fill: var(--sparks-color);
-}
-
-.like-icon.is-liked .core {
-  transition: fill 0.3s linear;
-  fill: var(--sparks-color);
-}
-
-.like-icon.is-liked .main-body {
-  transition: fill 0.3s linear 0.05s;
-  fill: var(--sparks-color);
-}
-
-.like-icon.is-liked .contour {
-  transition: fill 0.3s linear 0.06s;
-  fill: var(--sparks-color);
-}
-
-.like-icon.is-liked .heart {
-  animation-name: flash;
-  animation-duration: 0.3s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-timing-function: ease-in;
-  animation-delay: 0.1s;
-  animation-fill-mode: none;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks;
-  animation-duration: 0.3s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-timing-function: ease-in;
-  animation-delay: 0.3s;
-  animation-fill-mode: none;
-}
-
-.like-icon .contour {
-  transition: fill 0.1s linear;
-  fill: var(--main-color-font);
 }
 
 .button {
@@ -467,10 +399,6 @@ dialog[open] {
 }
 
 @media (width <= 375px) {
-
-  .header {
-    min-block-size: 323px;
-  }
 
   .content__list {
     width: 100%;
